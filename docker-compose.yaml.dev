@@ -6,21 +6,21 @@ services:
     container_name: service_mns_master_system-1.0.0-snapshot
     restart: always
     environment:
-      DB_MASTER_USER=postgres
-      DB_MASTER_PASS=admin
-      DB_MASTER_NAME=mns_sis_master
-      DB_MASTER_HOST=103.84.207.191
-      DB_MASTER_PORT=5432
-      DB_PPDB_USER=postgres
-      DB_PPDB_PASS=admin
-      DB_PPDB_NAME=mns_sis_ppdb
-      DB_PPDB_HOST=103.84.207.191
-      DB_PPDB_PORT=5432
-      DB_BILL_USER=postgres
-      DB_BILL_PASS=admin
-      DB_BILL_NAME=mns_sis_bill
-      DB_BILL_HOST=103.84.207.191
-      DB_BILL_PORT=5432
+      DB_MASTER_USER:postgres
+      DB_MASTER_PASS:admin
+      DB_MASTER_NAME:mns_sis_master
+      DB_MASTER_HOST:103.84.207.191
+      DB_MASTER_PORT:5432
+      DB_PPDB_USER:postgres
+      DB_PPDB_PASS:admin
+      DB_PPDB_NAME:mns_sis_ppdb
+      DB_PPDB_HOST:103.84.207.191
+      DB_PPDB_PORT:5432
+      DB_BILL_USER:postgres
+      DB_BILL_PASS:admin
+      DB_BILL_NAME:mns_sis_bill
+      DB_BILL_HOST:103.84.207.191
+      DB_BILL_PORT:5432
     ports:
       - "8080:8080"
     networks:
