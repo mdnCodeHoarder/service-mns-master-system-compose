@@ -36,6 +36,11 @@ services:
       DB_PPDB_NAME: ${DB_PPDB_NAME}
       DB_PPDB_HOST: ${DB_PPDB_HOST}
       DB_PPDB_PORT: ${DB_PPDB_PORT}
+      DB_BILL_USER: ${DB_BILL_USER}
+      DB_BILL_PASS: ${DB_BILL_PASS}
+      DB_BILL_NAME: ${DB_BILL_NAME}
+      DB_BILL_HOST: ${DB_BILL_HOST}
+      DB_BILL_PORT: ${DB_BILL_PORT}
     ports:
       - "${APP_PORT}:8080"
     networks:
