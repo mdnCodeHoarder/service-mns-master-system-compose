@@ -2,6 +2,7 @@ services:
   db-master:
     image: postgres-master:15
     container_name: postgres_db_master
+    restart: always
     tty: true
     environment:
       DB_MASTER_USER: ${DB_MASTER_USER}
@@ -12,6 +13,7 @@ services:
   db-ppdb:
     image: postgres-ppdb:15
     container_name: postgres_db_ppdb
+    restart: always
     tty: true
     environment:
       DB_PPDB_USER: ${DB_PPDB_USER}
@@ -24,6 +26,7 @@ services:
     volumes:
       - /home/docker/uploads:/app/uploads:rw
     container_name: service_mns_master_system-1.0.0-snapshot
+    restart: always
     tty: true
     environment:
       DB_MASTER_USER: ${DB_MASTER_USER}
