@@ -6,7 +6,7 @@ services:
     tty: true
     environment:
       POSTGRES_USER: ${DB_MASTER_USER}
-      POSTGRES_PASS: ${DB_MASTER_PASS}
+      POSTGRES_PASSWORD: ${DB_MASTER_PASS}
       POSTGRES_DB: ${DB_MASTER_NAME}
     networks:
       - mns-sis-master-system-network
@@ -17,7 +17,7 @@ services:
     tty: true
     environment:
       POSTGRES_USER: ${DB_PPDB_USER}
-      POSTGRES_PASS: ${DB_PPDB_PASS}
+      POSTGRES_PASSWORD: ${DB_PPDB_PASS}
       POSTGRES_DB: ${DB_PPDB_NAME}
     networks:
       - mns-sis-master-system-network
