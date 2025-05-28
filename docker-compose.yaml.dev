@@ -1,6 +1,6 @@
 services:
   db-master:
-    image: postgres-master:15
+    image: postgres:15
     container_name: postgres_db_master
     restart: unless-stopped
     environment:
@@ -10,7 +10,7 @@ services:
     networks:
       - mns-sis-master-system-network
   db-ppdb:
-    image: postgres-pdb:15
+    image: postgres:15
     container_name: postgres_db_ppdb
     restart: unless-stopped
     environment:
