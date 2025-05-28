@@ -1,37 +1,4 @@
 services:
-  db-master:
-    image: postgres:15
-    container_name: postgres_db_master
-    restart: unless-stopped
-    tty: true
-    environment:
-      POSTGRES_USER: ${DB_MASTER_USER}
-      POSTGRES_PASSWORD: ${DB_MASTER_PASS}
-      POSTGRES_DB: ${DB_MASTER_NAME}
-    networks:
-      - mns-sis-master-system-network
-  db-ppdb:
-    image: postgres:15
-    container_name: postgres_db_ppdb
-    restart: unless-stopped
-    tty: true
-    environment:
-      POSTGRES_USER: ${DB_PPDB_USER}
-      POSTGRES_PASSWORD: ${DB_PPDB_PASS}
-      POSTGRES_DB: ${DB_PPDB_NAME}
-    networks:
-      - mns-sis-master-system-network
-  db-bill:
-    image: postgres:15
-    container_name: postgres_db_bill
-    restart: unless-stopped
-    tty: true
-    environment:
-      POSTGRES_USER: ${DB_BILL_USER}
-      POSTGRES_PASSWORD: ${DB_BILL_PASS}
-      POSTGRES_DB: ${DB_BILL_NAME}
-    networks:
-      - mns-sis-master-system-network
   service-mns-master-system:
     image: service-mns-master-system
     volumes:
@@ -40,21 +7,13 @@ services:
     restart: unless-stopped
     tty: true
     environment:
-      DB_MASTER_USER: ${DB_MASTER_USER}
-      DB_MASTER_PASS: ${DB_MASTER_PASS}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASS: ${POSTGRES_PASS}
       DB_MASTER_NAME: ${DB_MASTER_NAME}
-      DB_MASTER_HOST: db-master
-      DB_MASTER_PORT: ${DB_MASTER_PORT}
-      DB_PPDB_USER: ${DB_PPDB_USER}
-      DB_PPDB_PASS: ${DB_PPDB_PASS}
       DB_PPDB_NAME: ${DB_PPDB_NAME}
-      DB_PPDB_HOST: db-ppdb
-      DB_PPDB_PORT: ${DB_PPDB_PORT}
-      DB_BILL_USER: ${DB_BILL_USER}
-      DB_BILL_PASS: ${DB_BILL_PASS}
       DB_BILL_NAME: ${DB_BILL_NAME}
-      DB_BILL_HOST: db-bill
-      DB_BILL_PORT: ${DB_BILL_PORT}
     ports:
       - "${APP_PORT}:8080"
     networks:
