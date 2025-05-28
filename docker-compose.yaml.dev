@@ -4,6 +4,8 @@ services:
     container_name: postgres_db_master
     restart: unless-stopped
     tty: true
+    ports:
+      - "${DB_MASTER_PORT}:5432"
     environment:
       POSTGRES_USER: ${DB_MASTER_USER}
       POSTGRES_PASSWORD: ${DB_MASTER_PASS}
@@ -15,6 +17,8 @@ services:
     container_name: postgres_db_ppdb
     restart: unless-stopped
     tty: true
+    ports:
+      - "${DB_MASTER_PORT}:5432"
     environment:
       POSTGRES_USER: ${DB_PPDB_USER}
       POSTGRES_PASSWORD: ${DB_PPDB_PASS}
@@ -26,6 +30,8 @@ services:
     container_name: postgres_db_bill
     restart: unless-stopped
     tty: true
+    ports:
+      - "${DB_MASTER_PORT}:5432"
     environment:
       POSTGRES_USER: ${DB_BILL_USER}
       POSTGRES_PASSWORD: ${DB_BILL_PASS}
