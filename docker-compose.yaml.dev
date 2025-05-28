@@ -5,9 +5,9 @@ services:
     restart: unless-stopped
     tty: true
     environment:
-      DB_MASTER_USER: ${DB_MASTER_USER}
-      DB_MASTER_PASS: ${DB_MASTER_PASS}
-      DB_MASTER_NAME: ${DB_MASTER_NAME}
+      POSTGRES_USER: ${DB_MASTER_USER}
+      POSTGRES_PASS: ${DB_MASTER_PASS}
+      POSTGRES_DB: ${DB_MASTER_NAME}
     networks:
       - mns-sis-master-system-network
   db-ppdb:
@@ -16,9 +16,9 @@ services:
     restart: unless-stopped
     tty: true
     environment:
-      DB_PPDB_USER: ${DB_PPDB_USER}
-      DB_PPDB_PASS: ${DB_PPDB_PASS}
-      DB_PPDB_NAME: ${DB_PPDB_NAME}
+      POSTGRES_USER: ${DB_PPDB_USER}
+      POSTGRES_PASS: ${DB_PPDB_PASS}
+      POSTGRES_DB: ${DB_PPDB_NAME}
     networks:
       - mns-sis-master-system-network
   service-mns-master-system:
