@@ -2,6 +2,9 @@ services:
   service-mns-master-system:
     image: service-mns-master-system
     container_name: service_mns_master_system-1.0.0-snapshot
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     volumes:
       - /home/docker/uploads:/app/uploads:rw
     restart: unless-stopped
