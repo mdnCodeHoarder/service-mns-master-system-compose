@@ -12,8 +12,6 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       DB_MASTER_NAME: ${DB_MASTER_NAME}
-      DB_PPDB_NAME: ${DB_PPDB_NAME}
-      DB_BILL_NAME: ${DB_BILL_NAME}
     ports:
       - "${APP_PORT}:8080"
     networks:
